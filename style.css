@@ -1,0 +1,21 @@
+:root {
+  --background-color: #f9f6f0;
+  --text-color: #000000;
+  --accent-color: #206b6b;
+}
+
+body {
+  max-width: 540px;
+  margin: auto;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+a:hover {
+  text-decoration: underline;
+}
