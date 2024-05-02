@@ -1,0 +1,22 @@
+name: wrighs6-dotcom
+
+services:
+  caddy:
+    container_name: caddy
+    image: caddy
+    restart: always
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - caddy-config:/config
+      - caddy-data:/data
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./static/:/usr/share/caddy
+    environment:
+      - DOMAIN=${DOMAIN}
+
+volumes:
+  caddy-config:
+  caddy-data:
+
