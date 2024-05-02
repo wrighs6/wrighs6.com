@@ -2,3 +2,7 @@
   root * /usr/share/caddy
   file_server
 }
+
+www.{$DOMAIN} {
+  redir https://{$DOMAIN}{uri}
+}
