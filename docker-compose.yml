@@ -3,21 +3,19 @@ name: wrighs6-dotcom
 services:
   caddy:
     container_name: caddy
-    image: caddy
+    image: caddy:alpine
     restart: always
     ports:
       - '80:80'
       - '443:443'
-      - '443:443/udp'
     volumes:
       - caddy-config:/config
       - caddy-data:/data
-      - ./server/Caddyfile:/etc/caddy/Caddyfile
-      - ./server/static/:/usr/share/caddy
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./static:/usr/share/caddy
     environment:
       - DOMAIN=${DOMAIN}
 
 volumes:
   caddy-config:
   caddy-data:
-
