@@ -2,7 +2,6 @@ name: wrighs6-dotcom
 
 services:
   caddy:
-    container_name: caddy
     image: caddy:alpine
     restart: always
     ports:
@@ -15,6 +14,10 @@ services:
       - ./static:/usr/share/caddy
     environment:
       - DOMAIN=${DOMAIN}
+    depends_on:
+      - cyberchef
+  cyberchef:
+    image: ghcr.io/gchq/cyberchef:latest
 
 volumes:
   caddy-config:
