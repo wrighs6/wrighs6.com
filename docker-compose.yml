@@ -12,8 +12,8 @@ services:
     volumes:
       - caddy-config:/config
       - caddy-data:/data
-      - ./Caddyfile:/etc/caddy/Caddyfile
-      - ./static/:/usr/share/caddy
+      - ./server/Caddyfile:/etc/caddy/Caddyfile
+      - ./server/static/:/usr/share/caddy
     environment:
       - DOMAIN=${DOMAIN}
 
