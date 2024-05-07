@@ -5,8 +5,8 @@ services:
     image: caddy:alpine
     restart: unless-stopped
     ports:
-      - '80:80'
-      - '443:443'
+      - '${HTTP}:80'
+      - '${HTTPS}:443'
     volumes:
       - caddy-config:/config
       - caddy-data:/data
