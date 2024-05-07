@@ -3,7 +3,7 @@ name: wrighs6-dotcom
 services:
   caddy:
     image: caddy:alpine
-    restart: always
+    restart: unless-stopped
     ports:
       - '80:80'
       - '443:443'
